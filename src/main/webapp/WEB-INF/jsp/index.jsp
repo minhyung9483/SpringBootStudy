@@ -12,8 +12,37 @@ function testAjax(){
 		type: "GET",
 		url: "/valueTest",
 		success: (data) => {
-			console.log(data);
+			//console.log(data);
 			$('#contents').html(data);
+		}
+	});
+}
+
+function getUsers(){
+	$.ajax({
+		type: "GET",
+		url: "/users",
+		success: (data) => {
+			var resultHtml = "";
+			resultHtml += "유저 목록</br>"
+			resultHtml += "<table>"
+			for(var i = 0; i < data.length; i++){
+				
+				var seq = data[i]['seq'];
+				var name = data[i]['name'];
+				var id = data[i]['id'];
+				var password = data[i]['password'];
+				
+				resultHtml += "<tr>"
+				resultHtml += "<td>" + seq + "</td>"
+				resultHtml += "<td>" + name + "</td>"
+				resultHtml += "<td>" + id + "</td>"
+				resultHtml += "<td>" + password + "</td>"
+				resultHtml += "</tr>"	
+				
+			}
+			resultHtml += "</table>";
+			$('#contents').html(resultHtml);
 		}
 	});
 }
@@ -27,6 +56,7 @@ Hello World! - 스프링부트 테스트
 <hr>
 
 <input type="button" onClick="testAjax()" value="ajax 테스트"></input>
+<input type="button" onClick="getUsers()" value="user 가져오기"></input>
 <br>
 <div id="contents"> </div>
 
