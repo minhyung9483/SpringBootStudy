@@ -1,0 +1,34 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Spring Boot Test</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+function testAjax(){
+	$.ajax({
+		type: "GET",
+		url: "/valueTest",
+		success: (data) => {
+			console.log(data);
+			$('#contents').html(data);
+		}
+	});
+}
+
+</script>
+</head>
+<body>
+
+<hr>
+Hello World! - 스프링부트 테스트
+<hr>
+
+<input type="button" onClick="testAjax()" value="ajax 테스트"></input>
+<br>
+<div id="contents"> </div>
+
+</body>
+</html>
