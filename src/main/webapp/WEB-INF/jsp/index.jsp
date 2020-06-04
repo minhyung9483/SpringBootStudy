@@ -28,13 +28,13 @@ function getUsers(){
 			resultHtml += "<table>"
 			for(var i = 0; i < data.length; i++){
 				
-				var seq = data[i]['seq'];
+				var user_id = data[i]['user_id'];
 				var name = data[i]['name'];
 				var id = data[i]['id'];
 				var password = data[i]['password'];
 				
 				resultHtml += "<tr>"
-				resultHtml += "<td>" + seq + "</td>"
+				resultHtml += "<td>" + user_id + "</td>"
 				resultHtml += "<td>" + name + "</td>"
 				resultHtml += "<td>" + id + "</td>"
 				resultHtml += "<td>" + password + "</td>"

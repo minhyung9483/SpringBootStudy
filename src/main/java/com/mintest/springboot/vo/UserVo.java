@@ -1,15 +1,16 @@
 package com.mintest.springboot.vo;
 
 public class UserVo {
-	private int seq;
+	private int user_id;
 	private String name;
 	private String id;
 	private String password;
-	public int getSeq() {
-		return seq;
+	
+	public int getUser_id() {
+		return user_id;
 	}
-	public void setSeq(int seq) {
-		this.seq = seq;
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
 	}
 	public String getName() {
 		return name;
@@ -29,6 +30,7 @@ public class UserVo {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
 	
 	
 }

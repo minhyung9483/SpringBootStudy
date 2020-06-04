@@ -3,6 +3,6 @@
 
 <mapper namespace="com.mintest.springboot.dao.UserDao">
 	<select id="selectAll" resultType="UserVo">
-		SELECT seq, name, id, password from users
+		SELECT user_id, name, id, password from user
 	</select> 
 </mapper>
